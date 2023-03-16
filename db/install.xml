@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="payment/gateway/shurjopay/db" VERSION="2021082100" COMMENT="XMLDB file for shurjopay payment gateway plugin"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="paygw_shurjopay_log" COMMENT="Stores shurjopay payment request log">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="txn_id" TYPE="int" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="order_id" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="currency" TYPE="char" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="amount" TYPE="float" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="payable_amount" TYPE="float" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="received_amount" TYPE="float" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="card_holder_name" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="bank_trx_id" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="invoice_no" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="bank_status" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="customer_order_id" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="sp_message" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="sp_code" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="email" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="address" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="city" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="method" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="component" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="itemid" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="paymentarea" TYPE="char" LENGTH="20" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="timeupdated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

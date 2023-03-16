@@ -1,0 +1,6 @@
+order id generate with the prefix like ABC54321 
+if ABC = prefix
+
+prefix = given by marchant
+
+sp_order_id save to db to track orders later
